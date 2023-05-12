@@ -1,13 +1,12 @@
 import io
-from typing import Tuple, Any, List
+from typing import Tuple
 
 import docx
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 
-from google_item_reader import GoogleItemReader
-from document_type import DocumentType, ContentType
+from .google_item_reader import GoogleItemReader
 
 
 class GoogleDocXReader(GoogleItemReader):

@@ -1,8 +1,9 @@
 from typing import Tuple, Any, List
+
 from google.oauth2.credentials import Credentials
 
-from google_item_reader import GoogleItemReader
-from document_type import DocumentType, ContentType
+from .document_type import ContentType
+from .google_item_reader import GoogleItemReader
 
 
 class GoogleDocReader(GoogleItemReader):
@@ -39,6 +40,8 @@ class GoogleDocReader(GoogleItemReader):
     def _read_table_content(self, doc_element: Any):
         text = ''
         table = doc_element.get("table")
+        if table is None:
+            return text
         rows = table.get("tableRows")
         if rows is not None:
             for row in rows:

@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "It's a simple google drive reader for llama-index, that is capable to read google doc, sheet and docx files from a folder or entire drive"
 authors = ["Alex Demchuk <demchukaa@gmail.com>"]
 readme = "README.md"
-packages = [{include = "google_drive_reader_llama_index"}, {include = './google-drive-reader'}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -17,6 +16,10 @@ google-auth-oauthlib = "^1.0.0"
 tenacity = "^8.2.2"
 python-docx = "^0.8.11"
 pydantic = "^1.10.7"
+fastapi = "^0.95.1"
+uvicorn = "^0.21.1"
+pypdf = "^3.8.1"
+pypdf2 = "^3.0.1"
 
 
 [build-system]

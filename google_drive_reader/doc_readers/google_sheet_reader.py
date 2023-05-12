@@ -1,13 +1,15 @@
-
 from typing import Tuple
 
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 
-from google_item_reader import GoogleItemReader
+from .document_type import DocumentType
+from .google_item_reader import GoogleItemReader
 
 
 class GoogleSheetReader(GoogleItemReader):
+    base_url = DocumentType.SHEET
+
     def __init__(self, creds: Credentials):
         super().__init__(creds)
 
